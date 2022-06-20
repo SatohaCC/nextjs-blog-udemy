@@ -25,7 +25,7 @@ export default function Home({ allPostsData }) {
 				<title>{siteTitle}</title>
 			</Head>
 			<section className={utilStyle.headingMd}>
-				<p>私はプログラミングを学ぶ薬剤師です！</p>
+				<p>私はプログラミングを学ぶ薬剤師です！gitのbranchのテストです</p>
 			</section>
 
 			<section className={utilStyle.headingMd}>
