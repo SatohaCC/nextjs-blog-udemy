@@ -38,6 +38,8 @@ export default function Home({ allPostsData }) {
 									src={`${thumbnail}`}
 									alt=""
 									className={styles.thumbnailImage}
+									height={426}
+									width={640}
 								/>
 							</Link>
 							<Link href={`/posts/${id}`}>
