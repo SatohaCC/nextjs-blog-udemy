@@ -8,47 +8,47 @@ import { getPostsData } from "../lib/post";
 
 //SSG
 export async function getStaticProps() {
-  const allPostsData = getPostsData(); //id,title,date,thumbnail
-  console.log(allPostsData);
+	const allPostsData = getPostsData(); //id,title,date,thumbnail
+	console.log(allPostsData);
 
-  return {
-    props: {
-      allPostsData,
-    },
-  };
+	return {
+		props: {
+			allPostsData,
+		},
+	};
 }
 
 export default function Home({ allPostsData }) {
-  return (
-    <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section className={utilStyle.headingMd}>
-        <p>私はエンジニアになりたい薬剤師です！</p>
-      </section>
+	return (
+		<Layout home>
+			<Head>
+				<title>{siteTitle}</title>
+			</Head>
+			<section className={utilStyle.headingMd}>
+				<p>私はプログラミングを学ぶ薬剤師です！</p>
+			</section>
 
-      <section className={utilStyle.headingMd}>
-        <h2>✍エンジニアのブログ</h2>
-        <div className={styles.grid}>
-          {allPostsData.map(({ id, title, date, thumbnail }) => (
-            <article key={id}>
-              <Link href={`/posts/${id}`}>
-                <img
-                  src={`${thumbnail}`}
-                  alt=""
-                  className={styles.thumbnailImage}
-                />
-              </Link>
-              <Link href={`/posts/${id}`}>
-                <a className={utilStyle.boldText}>{title}</a>
-              </Link>
-              <br />
-              <small className={utilStyle.lightText}>{date}</small>
-            </article>
-          ))}
-        </div>
-      </section>
-    </Layout>
-  );
+			<section className={utilStyle.headingMd}>
+				<h2>✍エンジニアのブログ</h2>
+				<div className={styles.grid}>
+					{allPostsData.map(({ id, title, date, thumbnail }) => (
+						<article key={id}>
+							<Link href={`/posts/${id}`}>
+								<Image
+									src={`${thumbnail}`}
+									alt=""
+									className={styles.thumbnailImage}
+								/>
+							</Link>
+							<Link href={`/posts/${id}`}>
+								<a className={utilStyle.boldText}>{title}</a>
+							</Link>
+							<br />
+							<small className={utilStyle.lightText}>{date}</small>
+						</article>
+					))}
+				</div>
+			</section>
+		</Layout>
+	);
 }
